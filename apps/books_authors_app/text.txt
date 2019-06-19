@@ -1,0 +1,61 @@
+Books.objects.create()
+Authors.objects.create()
+
+c = Books.objects.get(id=1) - updates a specific user at an id
+c.title = "C#"
+c.save()
+
+c = Books.objects.get(id=1) - updates a specific user at an id
+c.title = "C#"
+c.save()
+
+b = Authors.objects.get(id=4)
+b.first_name = "Bill"
+b.save()
+
+this_author = Author.objects.get(id=2)
+my_book = Book.objects.create(title="Little Women", author=this_author)
+    
+# or in one line...
+my_book = Book.objects.create(title="Little Women", author=Author.objects.get(id=2))
+
+author = Authors.objects.get(id=2)
+books = Books.objects.get(id=1)
+books2 = Books.objects.get(id=2)
+author.books.add(books,books2)
+authors.books.all()
+
+author2 = Authors.objects.get(id=3)
+books = Books.objects.get(id=1)
+books2 = Books.objects.get(id=2)
+books3 = Books.objects.get(id=3)
+author2.books.add(books,books2,books3)
+authors2.books.all()
+
+author3 = Authors.objects.get(id=3)
+books = Books.objects.get(id=1)
+books2 = Books.objects.get(id=2)
+books3 = Books.objects.get(id=3)
+books4 = Books.objects.get(id=4)
+author2.books.add(books,books2,books3,books4)
+authors3.books.all()
+
+author4 = Authors.objects.get(id=3)
+books = Books.objects.get(id=1)
+books2 = Books.objects.get(id=2)
+books3 = Books.objects.get(id=3)
+books4 = Books.objects.get(id=4)
+books5 = Books.objects.get(id=5)
+author2.books.add(books,books2,books3,books4,books5)
+authors4.books.all()
+
+books3.publishers.all()
+
+author.books.remove(books3)
+
+author5 = Authors.objects.get(id=6)
+author5.books.add(books2)
+
+author3.books.all() 
+
+books5.publishers.all() 
